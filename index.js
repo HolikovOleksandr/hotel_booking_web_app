@@ -1,7 +1,28 @@
-import express  from "express"
+import express from "express";
+import dotenv from "dotenv";
+import mongoose from "mongoose";
 
-const app = express()
+const app = express();
+dotenv.config();
 
-app.listen(8800, ()=>{
-    console.log("Hello, NodeJS!");
-})
+const connect = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO);
+    console.log("Conneted to MongoDB");
+  } catch (error) {
+    throw error;
+  }
+};
+
+mongoose.connection.on("disconnected", () => {
+  console.log("MongoDB disconnectrd!");
+});
+
+mongoose.connection.on("connected", () => {
+  console.log("MongoDB connected!");
+});
+
+app.listen(8800, () => {
+  connect();
+  console.log("Hello, NodeJS!");
+});
