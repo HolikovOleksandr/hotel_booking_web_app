@@ -1,0 +1,17 @@
+{
+  "name": "hotel_booking_web_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "yarn": "^1.22.21"
+  }
+}
