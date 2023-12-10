@@ -1,5 +1,12 @@
-import express, { json } from "express";
-import { createHotel, deleteHotel, getHotel, getHotels, updateHotel } from "../controllers/hotel.js";
+import express from "express";
+
+import {
+  createHotel,
+  deleteHotel,
+  getHotel,
+  getHotels,
+  updateHotel,
+} from "../controllers/hotel_controller.js";
 
 const router = express.Router();
 
